@@ -12,5 +12,6 @@
   <modules>
     <module>mock-ee</module>
     <module>mock-ee-tests</module>
+    <module>mock-ee-tiles</module>
   </modules>
 </project>

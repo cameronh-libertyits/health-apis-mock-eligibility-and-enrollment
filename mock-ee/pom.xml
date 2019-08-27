@@ -4,7 +4,7 @@
   <parent>
     <groupId>gov.va.api.health</groupId>
     <artifactId>service-starter</artifactId>
-    <version>3.0.11</version>
+    <version>3.1.2-SNAPSHOT</version>
     <relativePath/>
   </parent>
   <artifactId>mock-ee</artifactId>
@@ -13,6 +13,7 @@
   <properties>
     <apache.ws.security>1.6.19</apache.ws.security>
     <ee-artifacts.version>2.0.1</ee-artifacts.version>
+    <maven-tiles.version>2.15</maven-tiles.version>
   </properties>
   <dependencies>
     <dependency>
@@ -63,10 +64,19 @@
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
   </dependencies>
-  <distributionManagement>
-    <repository>
-      <id>health-apis-releases</id>
-      <url>https://tools.health.dev-developer.va.gov/nexus/repository/health-apis-releases/</url>
-    </repository>
-  </distributionManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>${maven-tiles.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <tiles>
+            <tile>gov.va.api.health.mock-ee.tiles:nexus-health-apis-releases:1.0.0</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

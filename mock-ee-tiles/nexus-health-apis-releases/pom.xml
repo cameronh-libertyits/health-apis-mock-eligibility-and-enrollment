@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>gov.va.api.health.mock-ee.tiles</groupId>
+    <artifactId>mock-ee-tiles-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>nexus-health-apis-releases</artifactId>
+  <version>1.0.0</version>
+  <packaging>tile</packaging>
+  <name>nexus-health-apis-releases</name>
+  <url>http://maven.apache.org</url>
+  <distributionManagement>
+    <repository>
+      <id>health-apis-releases</id>
+      <url>https://tools.health.dev-developer.va.gov/nexus/repository/health-apis-releases/</url>
+    </repository>
+  </distributionManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
